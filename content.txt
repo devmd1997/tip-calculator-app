@@ -1,0 +1,53 @@
+⚠️ This changelog contains breaking changes!
+
+Variable collection
+  mode 1
+    --spacing-spacing-0: 0;
+    --spacing-spacing-100: 8;
+    --spacing-spacing-200: 16;
+    --spacing-spacing-300: 24;
+    --spacing-spacing-400: 32;
+    --spacing-spacing-600: 48;
+    --color-colors-white: #ffffff;
+    --color-colors-black: #000000;
+    --color-colors-orange-400: #e17052;
+    --color-colors-green-200: #9fe8df;
+    --color-colors-green-400: #26c2ae;
+    --color-colors-green-750: #0d686d;
+    --color-colors-green-800: #085c61;
+    --color-colors-green-900: #00474b;
+    --color-colors-grey-50: #f3f9fa;
+    --color-colors-grey-200: #c5e4e7;
+    --color-colors-grey-300: #9ebbbd;
+    --color-colors-grey-400: #7f9d9f;
+    --color-colors-grey-500: #5e7a7d;
+    --color-colors-grey-550: #547878;
+    --color-colors-grey-600: #3d6666;
+    --spacing-spacing-1000: 80;
+    --spacing-spacing-1200: 96;
+    --spacing-spacing-1500: 120;
+    --spacing-spacing-1600: 128;
+    --spacing-spacing-2000: 160;
+    --spacing-spacing-3000: 240;
+    --spacing-spacing-4000: 320;
+
+
+  Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset

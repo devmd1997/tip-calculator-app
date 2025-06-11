@@ -1,5 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
+/* Colors */
 
+    /* Neutrals */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+    /* Primary */
+    --color-grey-50: #f3f9fa;
+    --color-grey-200: #c5e4e7;
+    --color-grey-300: #9ebbbd;
+    --color-grey-400: #7f9d9f;
+    --color-grey-500: #5e7a7d;
+    --color-grey-550: #547878;
+    --color-grey-600: #3d6666;
+
+    /* Secondary */
+    --color-green-200: #9fe8df;
+    --color-green-400: #26c2ae;
+    --color-green-750: #0d686d;
+    --color-green-800: #085c61;
+    --color-green-900: #00474b;
+
+    /* Accent */
+    --color-orange-400: #e17052;
+
+/* Typography */
+
+    /* Font */
+    --font-space-mono: 'Space Mono', monospace;
+    --font-weight-normal: 700;
+
+    /* Text Scale */
+    --text-sm: 13px;
+    --text-sm-line-height: 19px;
+    --text-base: 16px;
+    --text-base-line-height: 24px;
+    --text-lg: 20px;
+    --text-lg-line-height: 30px;
+    --text-xl: 24px;
+    --text-xl-line-height: 36px;
+    --text-2xl: 32px;
+    --text-2xl-line-height: 47px;
+    --text-3xl: 48px;
+    --text-3xl-line-height: 71px;
+
+    /* Spacing */
+    --spacing: 8px;
+
+    --radius-sm: 5px;
+    --radius-md: 15px;
+    --radius-lg: 25px;
+
+
+    /* Breakpoints */
+    --breakpoint-sm: 375px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1440px;
+}
+
+
+@utility text-preset-1 {
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl-line-height);
+    letter-spacing: -1px;
+}
+
+@utility text-preset-2 {
+    font-size: var(--text-2xl);
+    line-height: var(--text-2xl-line-height);
+    letter-spacing: -0.67px;
+}
+
+@utility text-preset-3 {
+    font-size: var(--text-xl);
+    line-height: var(--text-xl-line-height);
+    letter-spacing: 0px;
+}
+
+@utility text-preset-4 {
+    font-size: var(--text-lg);
+    line-height: var(--text-lg-line-height);
+    letter-spacing: 0px;
+}
+
+@utility text-preset-5 {
+    font-size: var(--text-base);
+    line-height: var(--text-base-line-height);
+    letter-spacing: 0px;
+}
+
+@utility text-preset-6 {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm-line-height);
+    letter-spacing: 0px;
+}
+
+
+@layer body {
+    body {
+        @apply bg-grey-200 
+        flex flex-col 
+        items-center min-h-screen
+        lg:justify-center 
+        font-space-mono 
+        pt-6 lg:pt-0 gap-4 lg:gap-8;
+    }
+
+    form {
+        @apply flex flex-col gap-4 w-full;
+    }
+
+    label {
+        @apply text-preset-5 text-grey-500 flex flex-row text-left justify-between;
+
+        .invalid-text {
+            @apply text-orange-400;
+        }
+    }
+
+    input {
+       @apply 
+       bg-grey-50
+        bg-no-repeat bg-position-[center_left_16px]
+        flex flex-row 
+        px-2 py-1 
+        items-center
+        rounded-sm
+        text-preset-3 text-green-900 text-right
+        focus:outline-none
+        focus:border-2 focus:border-green-400
+        data-[selected=true]:text-green-900
+        data-[selected=true]:bg-green-400
+        data-[invalid=true]:outline-none
+        data-[invalid=true]:border-2 data-[invalid=true]:border-orange-400;
+    }
+
+    input::placeholder {
+        @apply text-grey-300;
+    }
+
+    button {
+        @apply flex w-full
+        items-center justify-center
+        py-1  px-4
+        disabled:bg-green-750 bg-green-200
+        disabled:text-green-800 text-green-900
+        text-preset-4
+        rounded-sm;
+    }
+}
+
+@layer components {
+    .content-layout {
+        @apply bg-white py-4 px-3 md:py-6 md:px-10 md:mb-10 lg:py-4 lg:px-4
+        rounded-t-lg md:rounded-lg
+        md:drop-shadow-[0_32px_43px_rgba(79,166,175,0.20)]
+        flex flex-col
+        lg:flex-none lg:grid lg:grid-cols-2 
+        gap-4 
+        w-full md:max-w-[608px] lg:max-w-[920px];
+    }
+
+    .form-section {
+        @apply flex flex-col gap-1;
+    }
+
+    .tip-section {
+        @apply grid grid-cols-2 lg:grid-cols-3 gap-4;
+
+        .tip-option {
+            @apply text-center text-preset-3
+            cursor-pointer 
+            text-white hover:text-green-900 data-[selected=true]:text-green-900
+            bg-green-900 hover:bg-green-200 data-[selected=true]:bg-green-400
+            rounded-sm
+            py-1;
+        }
+
+        .tip-option-custom {
+            @apply text-center text-preset-3
+            cursor-pointer 
+            text-grey-550 bg-grey-50 
+            rounded-sm 
+            py-1;
+        }
+    }
+
+    .total-section {
+        @apply flex flex-col gap-4 p-3 lg:px-4 lg:py-3 lg:justify-between rounded-md bg-green-900;
+        
+        .total-text-layout {
+            @apply flex flex-col gap-3;
+
+            .total-text-content {
+                @apply flex flex-row justify-between items-center;
+                
+                .header-content {
+                    @apply flex flex-col 
+                    first:text-preset-5 [&>:first-child]:text-white
+                    last:text-preset-6 [&>:last-child]:text-grey-400;
+                }
+
+                .total-output {
+                    @apply text-preset-2 lg:text-preset-1 text-green-400 text-center;
+                }
+            }
+        }
+    }
 }

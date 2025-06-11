@@ -7,38 +7,60 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="./output.css" rel="stylesheet">
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <img src="../images/logo.svg" alt="logo" class="logo" />
+  <div class="content-layout">
+    <form>
+      <div data-value="" id="bill-form-section" class="form-section">
+        <label for="bill">
+          <span>Bill</span>
+          <span class="invalid-text"></span>
+        </label>
+          <input class="bg-[url('../images/icon-dollar.svg')]" type="number" id="bill" name="bill" min="0" step="0.01" placeholder="0" />
+      </div>
+      <div data-value="" id="tip-form-section" class="form-section">
+          <label for="tip" id="tip">
+            <span>Select Tip %</span>
+            <span class="invalid-text"></span>
+          </label>
+          <div id="tip-section" class="tip-section"></div>
+      </div>
+      <div data-value="" id="people-form-section" class="form-section">
+        <label for="people">
+          <span>Number of People</span>
+          <span class="invalid-text"></span>
+        </label>
+          <input class="bg-[url('../images/icon-person.svg')]" type="number" id="people" name="people" min="0" step="1" placeholder="0" />
+      </div>
+    </form>
 
-  Bill
+    <div id="total-form-section" class="total-section">
+        <div class="total-text-layout">
+          
+          <div id="tip-amount-section" class="total-text-content">
+            <div class="header-content">
+              <span>Tip Amount</span>
+              <span>/ person</span>
+            </div>
+            <span id="tip-amount" class="total-output">$0.00</span>
+          </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+          <div id="total-section" class="total-text-content">
+            <div class="header-content">
+              <span>Total</span>
+              <span>/ person</span>
+            </div>
+            <span id="total-amount" class="total-output">$0.00</span>
+          </div>
+        </div>
 
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        <button disabled id="reset-button" class="reset-button">
+          RESET
+        </button>
+      </div>
   </div>
+
+<script src="./main.js"></script>
 </body>
 </html>
